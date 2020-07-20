@@ -1,26 +1,26 @@
 package net.javacode.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Users {
+@Table(name="user")
+public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;//fields
     private String email;
     private String name;
     private String surname;
     private String middlename;
+    private String role;
 
-    protected Users() {}
-    protected Users(String email, String name, String surname, String middlename) {
+    protected User() {}
+    protected User(String email, String name, String surname, String middlename, String role) {
         this.email = email;
         this.name = name;
         this.surname = surname;
         this.middlename = middlename;
+        this.role = role;
     }
 
     public String getEmail() {
@@ -61,5 +61,13 @@ public class Users {
 
     public void setMiddlename(String middlename) {
         this.middlename = middlename;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

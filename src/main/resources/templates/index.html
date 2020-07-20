@@ -3,11 +3,12 @@
 <head>
     <title>Домашняя страница</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
 </head>
-<body>
 <header th:insert="blocks/header :: header"></header>
 <p th:text="'Hello, ' + ${name} + '!'"></p>
+<p>Поздравляю, вы - <red th:text="${counter}"></red> пользователь за сегодняшний день!</p>
 <main role="main">
 
     <section class="jumbotron text-center">

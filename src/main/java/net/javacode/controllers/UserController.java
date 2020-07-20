@@ -1,6 +1,6 @@
 package net.javacode.controllers;
 
-import net.javacode.models.Users;
+import net.javacode.models.User;
 import net.javacode.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,13 +16,8 @@ public class UserController {
 
     @GetMapping("/users")
     public String getUsers(Model m) {
-        Iterable<Users> users = userRepo.findAll();
+        Iterable<User> users = userRepo.findAll();
         m.addAttribute("users", users);
         return "user-list";
-    }
-
-    @GetMapping("/register")
-    public String register(@RequestParam String email, @RequestParam String password) {
-        return "404";
     }
 }

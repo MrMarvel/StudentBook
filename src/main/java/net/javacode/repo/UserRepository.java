@@ -1,11 +1,8 @@
 package net.javacode.repo;
 
-import lombok.NonNull;
-import net.javacode.models.User;
-import org.springframework.data.repository.CrudRepository;
+import net.javacode.domain.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Optional;
-
-public interface UserRepository extends CrudRepository<User, Long> {
-    public Optional<User> findByUsername(@NonNull String username);
+public interface UserRepository extends JpaRepository<User, Long> {
+    public User findByUsername(String username);
 }

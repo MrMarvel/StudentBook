@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Список пользователей</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+{{>blocks/header}}
+<div class="container mt-5 album py-5 bg-light">
+    <h1>Пользователи</h1>
+    {{#users}}
+        <div class="alert alert-info mt-2">
+            <h3>{{id}}</h3>
+            <h3>{{username}}</h3>
+            <h3>{{password}}</h3>
+            <h3>{{active}}</h3>
+            <h3><a href="/id/{{id}}">Детальнее</a></h3>
+        </div>
+    {{/users}}
+</div>
+{{>blocks/footer}}
+</body>
+</html>

@@ -30,7 +30,7 @@ public class RegistrationController {
             model.put("error", "Неправильный формат почты или пароля.");
             return "registration";
         }
-        User userFromDB = userRepo.findByUsername(user.getUsername());
+        User userFromDB = userRepo.findByUsername(user.getEmail());
         if (userFromDB != null) {
             model.put("error", "Эта почта уже зарегестрирована!");
             return "registration";

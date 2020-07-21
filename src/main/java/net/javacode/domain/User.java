@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
+import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -27,6 +28,8 @@ public class User implements UserDetails {
     private long id;//fields
     @Size(min=5, max=255, message = "Можно только 5-255 знаков")
     private String username;
+    @Size(min=5, max=255, message = "Можно только 5-255 знаков")
+    private String email;
     @Size(min=5, max=255, message = "Можно только 5-255 знаков")
     private String password;
     private boolean active;

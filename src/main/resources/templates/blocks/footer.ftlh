@@ -1,3 +1,4 @@
+<#macro main>
 <script>
     $(function() {
     $('.backtotop').click(function(){
@@ -13,3 +14,4 @@
     <p>Сайт разработан с технологией © Bootstrap</p>
     <p>Хотите создать такой же? <a href="https://getbootstrap.com/">Посетите домашнюю страницу</a> или наш <a href="/docs/4.5/getting-started/introduction/">гайд для начинающих</a>.</p>
 </div>
+</#macro>

@@ -1,14 +1,16 @@
-<!DOCTYPE HTML>
-<html>
+<#import "blocks/common.ftlh" as c>
+<#import "blocks/header.ftlh" as h>
+<#import "blocks/footer.ftlh" as f>
+<@c.page>
 <head>
     <title>Домашняя страница</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
 </head>
-{{>blocks/header}}
-<p>Hello, {{name}}!</p>
-<p>Поздравляю, вы - <red>{{counter}}</red> пользователь за сегодняшний день!</p>
+<@h.main />
+<p>Hello, ${name}!</p>
+<p>Поздравляю, вы - <red>${counter}</red> пользователь за сегодняшний день!</p>
 <main role="main">
 
     <section class="jumbotron text-center">
@@ -168,6 +170,6 @@
     </div>
 
 </main>
-{{>blocks/footer}}
+<@f.main />
 </body>
-</html>
+</@c.page>

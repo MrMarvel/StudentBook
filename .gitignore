@@ -33,4 +33,4 @@ build/
 .vscode/
 
 ### MYSELF ###
-StudentStorage/**
+StudentStorage/

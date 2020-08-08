@@ -21,9 +21,11 @@ public class UserController {
     private UserRepository userRepo;
 
     @GetMapping
-    public String userList(Model model) {
+    public String userList(@AuthenticationPrincipal User user,
+                           Model model) {
         List<User> users = userRepo.findAll();
         model.addAttribute("users",users);
+        model.addAttribute("user", user);
         return "userlist";
     }
     @GetMapping("{user}")
@@ -54,8 +56,8 @@ public class UserController {
             }
         }
         user.setActive(form.containsKey("active"));
-        user.setUsername(email);
-        user.setUsername(username);
+        user.setEmail(email);
+        if (username.length() >= 5) user.setUsername(username);
         user.setPassword(password);
         userRepo.save(user);
 

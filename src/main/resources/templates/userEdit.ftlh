@@ -10,7 +10,7 @@
 </head>
 <body>
 <@h.main user! />
-<form action="/redacting_user" method="post" class="container mt-5 album py-5 bg-light">
+<form action="/user" method="post" class="container mt-5 album py-5 bg-light">
     <input type="hidden" name="id" value="${(redacting_user.id)!}">
     <input type="text" name="username" value="${(redacting_user.username)!}">
     <input type="text" name="email" value="${(redacting_user.email)!}">

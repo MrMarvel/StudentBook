@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
-<@h.main />
+<@h.main user! />
 <div class="container mt-5 album py-5 bg-light">
     <h1>Пользователи</h1>
         <table class="alert alert-info mt-2">

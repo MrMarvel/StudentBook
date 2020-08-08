@@ -12,7 +12,7 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
-<@h.main user!null/>
+<@h.main user! />
 <p>Уже <red color="red">${counter}</red> раз пользователи открывали домашнюю страницу сегодня!</p>
 <main role="main">
 

@@ -53,11 +53,14 @@ public class MessageController {
         return "redirect:/messages";
     }
     @GetMapping
-    public String mes(@RequestParam(required = false, defaultValue = "") String filter, Map<String, Object> model) {
+    public String mes(@RequestParam(required = false, defaultValue = "") String filter,
+                      @AuthenticationPrincipal User user,
+                      Map<String, Object> model) {
         Iterable<Message> messages;
         if (!filter.equals("")) messages = messageRepo.findByTag(filter);
         else messages = messageRepo.findAll();
         model.put("messages", messages);
+        model.put("user", user);
         model.put("filter", filter);
         return "messages";
     }

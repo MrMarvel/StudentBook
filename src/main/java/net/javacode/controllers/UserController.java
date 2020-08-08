@@ -5,6 +5,7 @@ import net.javacode.domain.User;
 import net.javacode.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,7 @@ import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/user")
-@PreAuthorize("hasAuthority('ADMIN')")
+//@PreAuthorize("hasAuthority('ADMIN')")
 public class UserController {
     @Autowired
     private UserRepository userRepo;
@@ -26,8 +27,11 @@ public class UserController {
         return "userlist";
     }
     @GetMapping("{user}")
-    public String userEditForm(@PathVariable(name = "user") Long id, Model model) {
-        User user = userRepo.findById(id).orElse(null);
+    public String userEditForm(@PathVariable(name = "user") Long id,
+                               @AuthenticationPrincipal User user,
+                               Model model) {
+        User redacting_user = userRepo.findById(id).orElse(null);
+        model.addAttribute("redacting_user", redacting_user);
         model.addAttribute("user", user);
         model.addAttribute("roles", Role.values());
         return "userEdit";

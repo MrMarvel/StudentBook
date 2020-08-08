@@ -22,6 +22,7 @@ public class WebController {
         userCounter++;
         model.put("name", "Serega_3010");
         model.put("counter", userCounter);
+        model.put("user", user);
         return "index";
     }
     @GetMapping("/users")

@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
-<@h.main />
-<form action="/user" method="post" class="container mt-5 album py-5 bg-light">
-    <input type="hidden" name="id" value="${(user.id)!}">
-    <input type="text" name="username" value="${(user.username)!}">
-    <input type="text" name="email" value="${(user.email)!}">
-    <input type="text" name="password" value="${(user.password)!}">
+<@h.main user! />
+<form action="/redacting_user" method="post" class="container mt-5 album py-5 bg-light">
+    <input type="hidden" name="id" value="${(redacting_user.id)!}">
+    <input type="text" name="username" value="${(redacting_user.username)!}">
+    <input type="text" name="email" value="${(redacting_user.email)!}">
+    <input type="text" name="password" value="${(redacting_user.password)!}">
     <#list roles as role>
     <div>
-        <label><input type="checkbox" name="${role}" ${user.roles?seq_contains(role)?string("checked","")} />${role}</label>
+        <label><input type="checkbox" name="${role}" ${redacting_user.roles?seq_contains(role)?string("checked","")} />${role}</label>
     </div>
     </#list>
 <label><input type="checkbox" name="active" <#if user.active>checked</#if>> Активирован</label>

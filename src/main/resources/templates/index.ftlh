@@ -5,12 +5,15 @@
 <head>
     <title>Домашняя страница</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
 </head>
-<@h.main />
-<p>Hello, ${name}!</p>
-<p>Поздравляю, вы - <red>${counter}</red> пользователь за сегодняшний день!</p>
+<@h.main user!/>
+<p>Уже <red color="red">${counter}</red> раз пользователи открывали домашнюю страницу сегодня!</p>
 <main role="main">
 
     <section class="jumbotron text-center">

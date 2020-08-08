@@ -17,7 +17,8 @@
             <h3>${u.id}</h3>
             <h3><#if u.email??>${u.email}<#else>-none-</#if></h3>
             <h3><#if u.username??>${u.username}<#else>-none-</#if></h3>
-            <h3>${u.password}</h3>
+            <h3><#if u.username??>${u.username}<#else>-none-</#if></h3>
+            <h3>Фиг тебе, а не пароль</h3>
             <h3><a href="/id/${u.id}">Детальнее</a></h3>
         </div>
     </#list>

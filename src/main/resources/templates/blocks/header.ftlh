@@ -5,6 +5,29 @@
         <a class="p-2 text-dark" href="/">Главная ЭЖС</a>
         <a class="p-2 text-dark" href="/user">Пользователи</a>
         <a class="p-2 text-dark" href="/messages">Сообщения</a>
+        <a class="p-2 text-dark" href="/materials">Материалы</a>
+        <a class="p-2 text-dark dropdown">
+            <a data-toggle="dropdown" aria-expanded="false" class="p-2 text-dark dropdown-toggle" href="#">Dropdown</a>
+            <div role="menu" class="dropdown-menu">
+                <a role="presentation" class="dropdown-item" href="#">First Item</a>
+                <a class="p-2 text-dark dropdown">
+                    <a data-toggle="dropdown" aria-expanded="false" class="p-2 text-dark dropdown-toggle" href="#">Dropdown</a>
+                    <div role="menu" class="dropdown-menu">
+                        <a role="presentation" class="dropdown-item" href="#">First Item</a>
+                        <a role="presentation" class="dropdown-item" href="#">Second Item</a>
+                        <a role="presentation" class="dropdown-item" href="#">Third Item</a>
+                    </div>
+                    <a role="presentation" class="dropdown-item" href="#">Second Item</a>
+                    <a class="p-2 text-dark dropdown">
+                        <a data-toggle="dropdown" aria-expanded="false" class="p-2 text-dark dropdown-toggle" href="#">Dropdown</a>
+                        <div role="menu" class="dropdown-menu">
+                            <a role="presentation" class="dropdown-item" href="#">First Item</a>
+                            <a role="presentation" class="dropdown-item" href="#">Second Item</a>
+                            <a role="presentation" class="dropdown-item" href="#">Third Item</a>
+                        </div>
+                    </a>
+            </div>
+        </a>
     </nav>
     <#if user?has_content>
     <a class="btn btn-outline-primary" href="/user/${(user.id)!}">Личный кабинет</a>

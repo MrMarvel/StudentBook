@@ -66,6 +66,10 @@ public class MaterialsController {
         }
         return "redirect:/materials";
     }
+    @GetMapping("/test")
+    public String test(@AuthenticationPrincipal User user) {
+        return "test";
+    }
 
     @GetMapping("/delete")
     public String delete(@AuthenticationPrincipal User user,

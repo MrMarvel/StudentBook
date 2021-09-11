@@ -38,21 +38,14 @@
                     <div class="card mb-4 shadow-sm">
                         <<#if attachment.fileName?ends_with(".jpeg") || attachment.fileName?ends_with(".png") ||
                         attachment.fileName?ends_with(".jpg")>img src="/materials/${attachment.fileName}"<#else>svg
-                    </
-                    #if> class="bd-placeholder-img card-img-top" width="100%" height="225"
+                    </#if> class="bd-placeholder-img card-img-top" width="100%" height="225"
                     xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
                     aria-label="Placeholder: Thumbnail">
                     <title>Placeholder</title>
                     <rect width="100%" height="100%" fill="#55595c"></rect>
                     <text x="50%" y="50%" fill="#eceeef" dy=".3em"><#if
                         attachment.owner.username??>${attachment.owner.username!}<#else>${attachment.owner.email!}
-                    </
-                    #if></text>
-                </
-                <#if attachment.fileName?ends_with(".jpeg") || attachment.fileName?ends_with(".png") ||
-                attachment.fileName?ends_with(".jpg")>img"<#else>svg
-            </
-            #if>>
+                    </#if></text>
             <div class="card-body">
                 <p class="card-text">${attachment.fileName}</p>
                 <div class="d-flex justify-content-between align-items-center">
